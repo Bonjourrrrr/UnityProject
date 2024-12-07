@@ -25,10 +25,10 @@ public class PlayerController : MonoBehaviour
         rbPlayer = GetComponent<Rigidbody>();
 
         // If no camera is assigned, use the main camera
-        if (cameraTransform == null)
+        /*if (cameraTransform == null)
         {
             cameraTransform = Camera.main.transform;
-        }
+        }*/
     }
 
     // Update is called once per frame
@@ -38,9 +38,10 @@ public class PlayerController : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
         movement = new Vector3(x, 0, z);
+        rbPlayer.MovePosition(transform.position + movement);
 
         // Calculate movement direction relative to the camera
-        if (movement.magnitude > 0.1f)
+        /*if (movement.magnitude > 0.1f)
         {
             Vector3 cameraForward = cameraTransform.forward;
             Vector3 cameraRight = cameraTransform.right;
@@ -56,13 +57,14 @@ public class PlayerController : MonoBehaviour
             Vector3 moveDirection = cameraForward * movement.z + cameraRight * movement.x;
 
             MovePlayer(moveDirection);
-        }
+        }*/
+
     }
 
     private void MovePlayer(Vector3 direction)
     {
         // Calculate movement
-        Vector3 movement = direction * speed * Time.deltaTime;
+        Vector3 movement = direction * speed;
         rbPlayer.MovePosition(transform.position + movement);
 
         // Orient the player towards the movement direction
