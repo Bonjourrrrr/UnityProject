@@ -11,8 +11,15 @@ public class ImageSlideshow : MonoBehaviour
 
     public string nextSceneName; // Nombre de la escena del nivel 1
 
+    private int level;
+
     void Start()
     {
+        level = SceneManager.GetActiveScene().buildIndex;
+        //manager = this.gameObject;
+        Debug.Log($"Level: {level}");
+
+
         // Configura la primera imagen
         if (imageSequence.Length > 0)
         {
@@ -21,6 +28,8 @@ public class ImageSlideshow : MonoBehaviour
 
         // Configura el botón para que llame a NextImage()
         nextButton.onClick.AddListener(NextImage);
+
+
     }
 
     public void NextImage()
@@ -29,11 +38,13 @@ public class ImageSlideshow : MonoBehaviour
         {
             currentIndex++; // Avanza al siguiente índice
             displayImage.sprite = imageSequence[currentIndex]; // Cambia la imagen
+            
         }
         else
         {
             MarkSlideshowAsShown(); // Marca como mostrado
             LoadNextScene(); // Carga el nivel
+            SceneManager.LoadScene(level + 1);
         }
     }
 
