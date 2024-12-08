@@ -53,6 +53,7 @@ public class PlayerManager : MonoBehaviour
                 SceneManager.LoadScene(0);
             }
         }
+        yield return null;
     }
 
 }
