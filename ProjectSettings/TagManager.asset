@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Eatable
   - FinishZone
+  - Wolf
+  - WaitingWolf
   layers:
   - Default
   - TransparentFX
