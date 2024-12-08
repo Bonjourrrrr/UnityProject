@@ -37,13 +37,14 @@ public class EnemyManager : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            UnityEngine.Debug.Log($"Wolf collided with player");
             Destroy(myPlayer);
             SceneManager.LoadScene(0);
         }
     }
     private IEnumerator WaitBeforeContinue()
     {
-        yield return new WaitForSeconds(20);
+        yield return new WaitForSeconds(15);
         navMeshEnemy.enabled = true;
         isWaiting = false;
     }

@@ -19,7 +19,7 @@ public class PlayerManager : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         GameObject collidedWith = collision.gameObject;
-        Debug.Log($"Collided with {collidedWith.name}");
+        Debug.Log($"Bunny collided with {collidedWith.name}");
 
         if (collidedWith.CompareTag("Eatable"))
         {
