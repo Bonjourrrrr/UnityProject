@@ -9,7 +9,6 @@ public class EnemyManager : MonoBehaviour
 {
     private GameObject myEnemy, myPlayer;
     private NavMeshAgent navMeshEnemy;
-    private bool isWaiting = false;
 
     void Start()
     {
