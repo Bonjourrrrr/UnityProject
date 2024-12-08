@@ -43,7 +43,7 @@ public class EnemyManager : MonoBehaviour
         {
             UnityEngine.Debug.Log($"Wolf collided with player");
             Destroy(myPlayer);
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(7);
         }
     }
 
