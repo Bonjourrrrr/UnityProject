@@ -44,7 +44,7 @@ public class EnemyManager : MonoBehaviour
     }
     private IEnumerator WaitBeforeContinue()
     {
-        yield return new WaitForSeconds(15);
+        yield return new WaitForSeconds(7);
         navMeshEnemy.enabled = true;
         isWaiting = false;
     }
