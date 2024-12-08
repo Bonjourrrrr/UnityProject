@@ -17,22 +17,26 @@ public class EnemyManager : MonoBehaviour
         myEnemy = this.gameObject;
         navMeshEnemy = myEnemy.GetComponent<NavMeshAgent>();
 
-        if (myEnemy.tag == "WaitingWolf" && isWaiting == false)
+        if (myEnemy.tag == "WaitingWolf")
         {
             navMeshEnemy.enabled = false;
             StartCoroutine(WaitBeforeContinue());
-            isWaiting = true;
+        }
+        else
+        {
+            navMeshEnemy.enabled = true;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!isWaiting)
+        if (navMeshEnemy.enabled)
         {
             navMeshEnemy.destination = myPlayer.transform.position;
         }
     }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
@@ -42,11 +46,11 @@ public class EnemyManager : MonoBehaviour
             SceneManager.LoadScene(0);
         }
     }
+
     private IEnumerator WaitBeforeContinue()
     {
-        yield return new WaitForSeconds(7);
+        yield return new WaitForSeconds(5);
         navMeshEnemy.enabled = true;
-        isWaiting = false;
     }
 }
 
