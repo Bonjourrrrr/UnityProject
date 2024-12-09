@@ -14,9 +14,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //levelName = SceneManager.GetActiveScene().name;
         level = SceneManager.GetActiveScene().buildIndex;
-        //manager = this.gameObject;
         Debug.Log($"Level: {level}") ;
 
         // Singleton setup
@@ -29,28 +27,6 @@ public class GameManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject); // Preserve GameManager across scenes
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-
-        /*int numCarrots = manager.transform.childCount;
-        if (numCarrots == 0)
-        {
-            Debug.Log("Level Complete");
-            if (level < SceneManager.sceneCountInBuildSettings - 1)
-            {
-                SceneManager.LoadScene(level + 1);
-            }
-            else
-            {
-                Debug.Log("Game Complete");
-                SceneManager.LoadScene(0);
-            }
-        }*/
-    }
-
     public void IncrementCarrotsEaten()
     {
         totalCarrotsEaten++;
@@ -61,6 +37,7 @@ public class GameManager : MonoBehaviour
     {
         return totalCarrotsEaten;
     }
+    
 
 
 }
