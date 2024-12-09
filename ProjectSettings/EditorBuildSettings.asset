@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SlideShow.unity
     guid: 39b7349f3dd476e4b82876372e7cc296
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
+    path: Assets/Scenes/Level4.unity
     guid: 362a35b6622e68844a79819f161f8150
   - enabled: 1
     path: Assets/Scenes/Level2.unity
@@ -20,12 +20,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level3.unity
     guid: 4233c72dc3d9a02418189ad1ce081cf5
-  - enabled: 0
-    path: Assets/Scenes/Level4.unity
-    guid: b9d0e99301b83ae45b85036b48d877dc
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Scenes/Level ().unity
+    guid: 0b718a7a081ce8647b2c713f9119b52a
+  - enabled: 1
     path: Assets/Scenes/Level5.unity
-    guid: 264253248bed68f4db27d29508cd3445
+    guid: 2030d38fbf3937346a601dda54c84a3c
   - enabled: 1
     path: Assets/Scenes/EndScreen.unity
     guid: be4a5416a7126c744a90d40d70591d64
