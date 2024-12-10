@@ -3290,7 +3290,7 @@ PrefabInstance:
     - target: {fileID: 285386673557762480, guid: 842e10d678620214d8eed7530cce0b72, type: 3}
       propertyPath: m_NavMeshData
       value: 
-      objectReference: {fileID: 23800000, guid: c813d14e212412c49af1dbc4484c5757, type: 2}
+      objectReference: {fileID: 23800000, guid: edb3aa3bec27c0e498f15b59404430b5, type: 2}
     - target: {fileID: 787273006944802169, guid: 842e10d678620214d8eed7530cce0b72, type: 3}
       propertyPath: m_Name
       value: NavTopology
@@ -3362,11 +3362,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2758223399702700242, guid: 9933cac767eff6c43bd56f55fec8681c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.010262817
+      value: -0.010262816
       objectReference: {fileID: 0}
     - target: {fileID: 2758223399702700242, guid: 9933cac767eff6c43bd56f55fec8681c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.10438376
+      value: -0.104383774
       objectReference: {fileID: 0}
     - target: {fileID: 2758223399702700242, guid: 9933cac767eff6c43bd56f55fec8681c, type: 3}
       propertyPath: m_LocalRotation.z
@@ -3386,11 +3386,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2874962530639846126, guid: 9933cac767eff6c43bd56f55fec8681c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.010262817
+      value: -0.010262816
       objectReference: {fileID: 0}
     - target: {fileID: 2874962530639846126, guid: 9933cac767eff6c43bd56f55fec8681c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.10438376
+      value: -0.104383774
       objectReference: {fileID: 0}
     - target: {fileID: 2874962530639846126, guid: 9933cac767eff6c43bd56f55fec8681c, type: 3}
       propertyPath: m_LocalRotation.z
