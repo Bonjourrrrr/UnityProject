@@ -26,8 +26,6 @@ public class EnemyManager : MonoBehaviour
             navMeshEnemy.enabled = true;
         }
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (navMeshEnemy.enabled)
