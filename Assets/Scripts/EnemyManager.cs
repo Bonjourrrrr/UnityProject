@@ -28,7 +28,7 @@ public class EnemyManager : MonoBehaviour
     }
     void Update()
     {
-        if (navMeshEnemy.enabled)
+        if (navMeshEnemy.enabled && myPlayer != null)
         {
             navMeshEnemy.destination = myPlayer.transform.position;
         }
@@ -39,14 +39,14 @@ public class EnemyManager : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             UnityEngine.Debug.Log($"Wolf collided with player");
-            Destroy(myPlayer);
-            SceneManager.LoadScene(7);
+            Destroy(collision.gameObject); 
+            SceneManager.LoadScene(8);
         }
     }
 
     private IEnumerator WaitBeforeContinue()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(10f);
         navMeshEnemy.enabled = true;
     }
 }
