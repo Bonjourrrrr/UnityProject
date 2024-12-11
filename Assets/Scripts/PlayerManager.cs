@@ -19,7 +19,7 @@ public class PlayerManager : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         GameObject collidedWith = collision.gameObject;
-        Debug.Log($"Collided with {collidedWith.name}");
+        Debug.Log($"Bunny collided with {collidedWith.name}");
 
         if (collidedWith.CompareTag("Eatable"))
         {
@@ -31,7 +31,13 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+   
     private void OnTriggerEnter(Collider other)
+    {
+        StartCoroutine(HandleTriggerEnter(other));
+    }
+
+    private IEnumerator HandleTriggerEnter(Collider other)
     {
         Debug.Log("Trigger Enter:" + other.gameObject.tag);
         if (other.CompareTag("FinishZone"))
@@ -47,5 +53,7 @@ public class PlayerManager : MonoBehaviour
                 SceneManager.LoadScene(0);
             }
         }
+        yield return null;
     }
+
 }
