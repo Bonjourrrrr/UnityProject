@@ -5,8 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class YouDiedScreen : MonoBehaviour
 {
+    private AudioSource jumpscare;
     void Start()
     {
+        Cursor.lockState = CursorLockMode.None; // unlock the cursor
+        Cursor.visible = true; // make the cursor visible
+        jumpscare = GetComponent<AudioSource>();
+        jumpscare.Play();
         StartCoroutine(WaitBeforeContinue());
     }
     private IEnumerator WaitBeforeContinue()
