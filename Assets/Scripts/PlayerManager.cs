@@ -8,12 +8,14 @@ public class PlayerManager : MonoBehaviour
     public Rigidbody rbPlayer;
     private MeshRenderer meshRendererPlayer;
     private int level;
+    private AudioSource eaten;
 
     void Start()
     {
         level = SceneManager.GetActiveScene().buildIndex;
         meshRendererPlayer = GetComponent<MeshRenderer>();
         rbPlayer = GetComponent<Rigidbody>();
+        eaten = GetComponent<AudioSource>();
 
     }
     private void OnCollisionEnter(Collision collision)
@@ -23,7 +25,8 @@ public class PlayerManager : MonoBehaviour
 
         if (collidedWith.CompareTag("Eatable"))
         {
-            // Increment the carrot counter via GameManager
+            // Increment the carrot counter via GameManager and make a little sound
+            eaten.Play();
             GameManager.Instance.IncrementCarrotsEaten();
 
             // Destroy the carrot
