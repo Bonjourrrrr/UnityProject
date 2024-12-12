@@ -20,13 +20,20 @@ public class ThirdPersonCam : MonoBehaviour
 
     private void Update()
     {
-        // rotate orientation
-        Vector3 viewDir = player.position - new Vector3(transform.position.x, player.position.y, transform.position.z);
-        orientation.forward = viewDir.normalized;
 
-        // rotate player object
-        Vector3 inputDir = combatLookAt.position - new Vector3(transform.position.x, combatLookAt.position.y, transform.position.z);
-        orientation.forward = inputDir.normalized;
-        playerObj.forward = inputDir.normalized;
+        if (player != null && orientation != null)
+        {
+            // rotate orientation
+            Vector3 viewDir = player.position - new Vector3(transform.position.x, player.position.y, transform.position.z);
+            orientation.forward = viewDir.normalized;
+        }
+
+        if (combatLookAt != null && playerObj != null && orientation != null)
+        {
+            // rotate player object
+            Vector3 inputDir = combatLookAt.position - new Vector3(transform.position.x, combatLookAt.position.y, transform.position.z);
+            orientation.forward = inputDir.normalized;
+            playerObj.forward = inputDir.normalized;
+        }
     }
 }

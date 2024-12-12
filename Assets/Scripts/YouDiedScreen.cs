@@ -11,7 +11,12 @@ public class YouDiedScreen : MonoBehaviour
     }
     private IEnumerator WaitBeforeContinue()
     {
-        yield return new WaitForSeconds(4f);
-        SceneManager.LoadScene(0);
+        Debug.Log("Waiting for 2 seconds");
+        yield return new WaitForSeconds(2f);
+        Debug.Log("Loading scene");
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.Load();
+        }
     }
 }
