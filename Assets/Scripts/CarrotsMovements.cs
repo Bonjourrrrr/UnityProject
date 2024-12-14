@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class CarrotsMovements : MonoBehaviour
 {
-    public float rotationSpeed = 50f;
+    public float rotationSpeed = 50; // rotation speed of the carrots 
 
     void Update()
     {
-        transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
+        transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime); // rotate the carrots around the y-axis
     }
 }

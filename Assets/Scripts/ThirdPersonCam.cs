@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class ThirdPersonCam : MonoBehaviour
 {
-    public Transform orientation;
-    public Transform player;
-    public Transform playerObj;
-    public Rigidbody rb;
-    public float rotationSpeed = 1.0f;
+    public Transform orientation; // orientation of the player
+    public Transform player; // player object
+    public Transform playerObj; // player object for combat camera style
+    public Rigidbody rb; // rigidbody of the player
+    public float rotationSpeed = 1.0f; // rotation speed of the camera
     public Transform combatLookAt; // for combat camera style
 
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked; // lock the cursor
         Cursor.visible = false; // make the cursor invisible
     }
 

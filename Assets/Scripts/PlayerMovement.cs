@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed, groundDrag, playerHeight;
-    public Transform orientation;
-    public LayerMask whatIsGround;
+    public float speed, groundDrag, playerHeight; // player movement variables
+    public Transform orientation; // player orientation
+    public LayerMask whatIsGround; // ground layer
 
-    private float horizontalInput;
+    private float horizontalInput; // input variables
     private float verticalInput;
-    private Vector3 moveDirection;
-    private Rigidbody rb;
-    private bool grounded;
+    private Vector3 moveDirection; // movement direction
+    private Rigidbody rb; // player rigidbody
+    private bool grounded; // is player grounded
 
     private void Start()
     {
+        // get components and freeze rotation
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
     }
@@ -24,24 +25,27 @@ public class PlayerMovement : MonoBehaviour
         // ground check
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f, whatIsGround);
 
+        // get input
         MyInput();
+
+        // speed control
         SpeedControl();
 
         // handle drag
         if (grounded)
         {
-            rb.drag = groundDrag;
+            rb.drag = groundDrag; 
         }
         else
         {
             rb.drag = 0;
         }
     }
-    private void FixedUpdate()
+    private void FixedUpdate() // physics update with camera orientation
     {
         MovePlayer();
     }
-    private void MyInput()
+    private void MyInput() // get input from player
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
@@ -54,8 +58,9 @@ public class PlayerMovement : MonoBehaviour
     }
     private void SpeedControl()
     {
+        // limit speed effectively
         Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-        if (flatVel.magnitude > speed) // if speed is greater than maxspeed, then normalize and multiply by maxspeed
+        if (flatVel.magnitude > speed) 
         {
             Vector3 limitVel = flatVel.normalized * speed;
             rb.velocity = new Vector3(limitVel.x, rb.velocity.y, limitVel.z);
