@@ -55,7 +55,7 @@ public class PlayerManager : MonoBehaviour
 
             if (level == 6) // If the player is in level 6, check the number of carrots eaten and load the appropriate ending
             {
-                if (GameManager.Instance.GetCarrotsEaten() > 8)
+                if (GameManager.Instance.GetCarrotsEaten() > 7)
                 {
                     SceneManager.LoadScene(8); // If the player has eaten more than 8 carrots, load the good ending
                 }

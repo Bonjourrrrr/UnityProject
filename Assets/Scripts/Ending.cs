@@ -14,6 +14,10 @@ public class SimpleSlideshow : MonoBehaviour
 
     void Start()
     {
+        // unlock the cursor and make it visible
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
         if (imageSequence.Length == 0)
         {
             Debug.LogError("El array de imágenes está vacío. Por favor, asigna imágenes en el Inspector.");
