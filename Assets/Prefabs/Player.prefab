@@ -149,8 +149,8 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1024
-  x: 2
-  y: 3
+  x: 0
+  y: 0
 --- !u!114 &8115352578899385982
 MonoBehaviour:
   m_ObjectHideFlags: 0
