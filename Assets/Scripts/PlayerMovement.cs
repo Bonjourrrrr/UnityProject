@@ -14,11 +14,20 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb; // player rigidbody
     private bool grounded; // is player grounded
 
+    private Animator anim;
+    public float x, y;
+
+
+
+
     private void Start()
     {
         // get components and freeze rotation
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+
+        anim = GetComponent<Animator>();
+
     }
     private void Update()
     {
@@ -40,6 +49,9 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.drag = 0;
         }
+
+        anim.SetFloat("VelX", x);
+        anim.SetFloat("VelY", y);
     }
     private void FixedUpdate() // physics update with camera orientation
     {
@@ -66,4 +78,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector3(limitVel.x, rb.velocity.y, limitVel.z);
         }
     }
+
+
+   
 }
