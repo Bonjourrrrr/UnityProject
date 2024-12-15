@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private bool grounded; // is player grounded
 
     private Animator anim;
-    public float x, y;
+   
 
 
 
@@ -50,8 +50,8 @@ public class PlayerMovement : MonoBehaviour
             rb.drag = 0;
         }
 
-        anim.SetFloat("VelX", x);
-        anim.SetFloat("VelY", y);
+        anim.SetFloat("VelX", horizontalInput);
+        anim.SetFloat("VelY", verticalInput);
     }
     private void FixedUpdate() // physics update with camera orientation
     {
