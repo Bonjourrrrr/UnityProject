@@ -5,16 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private int level;
+    private int level; // Current level
     public static GameManager Instance { get; private set; } // Singleton instance
-    private int totalCarrotsEaten = 0;
-    private bool loadLevel3 = false;
-    private int previousCarrotsEaten = 0;
+    private int totalCarrotsEaten = 0; // Total number of carrots eaten
+    private bool loadLevel3 = false; // is it necessary to load level 3 if the player dies
+    private int previousCarrotsEaten = 0; // Number of carrots eaten in level 2
 
     // Start is called before the first frame update
     void Start()
     {
-        level = SceneManager.GetActiveScene().buildIndex;
+        level = SceneManager.GetActiveScene().buildIndex; // Get the current level index
         Debug.Log($"Level: {level}");
 
         // Singleton setup
@@ -24,13 +24,14 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        Instance = this;
+        Instance = this; // Set the instance to this object
         DontDestroyOnLoad(gameObject); // Preserve GameManager across scenes
     }
 
     void Update()
     {
-        level = SceneManager.GetActiveScene().buildIndex;
+        level = SceneManager.GetActiveScene().buildIndex; // Get the current level index
+
         // Save progress of level 2
         if (level == 3)
         {
@@ -46,18 +47,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void IncrementCarrotsEaten()
+    public void IncrementCarrotsEaten() // Increment the number of carrots eaten when called
     {
         totalCarrotsEaten++;
         Debug.Log($"Carrots Eaten: {totalCarrotsEaten}");
     }
 
-    public int GetCarrotsEaten()
+    public int GetCarrotsEaten() // Return the number of carrots eaten
     {
         return totalCarrotsEaten;
     }
 
-    public void Load()
+    public void Load() // Used to load the appropriate scene when the player dies
     {
         if (loadLevel3)
         {
